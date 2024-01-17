@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.liferay.cmars.student">
+	<namespace>CMARS</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Student" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="studentId" primary="true" type="long"/>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"/>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="userName" type="String"/>
+		<column name="createDate" type="Date"/>
+		<column name="modifiedDate" type="Date"/>
+
+		<!-- Other fields -->
+		<column name="studentCode" type="String"/>
+		<column name="studentName" type="String"/>
+		<column name="studentEmail" type="String"/>
+		<column name="studentPhone" type="String"/>
+		<column name="studentGender" type="String"/>
+		<column name="studentAddress" type="String"/>
+
+
+		<!-- Other fields -->
+		<column name="field1" type="String"/>
+		<column name="field2" type="boolean"/>
+		<column name="field3" type="int"/>
+		<column name="field4" type="Date"/>
+		<column name="field5" type="String"/>
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="studentName"/>
+		</order>
+		<!-- Finder methods -->
+
+		<!--findByGroupId 메소드는 Liferay의 멀티테넌시(multi-tenancy)와 그룹 기반 데이터 관리 기능을 활용하는 핵심적인 부-->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"/>
+		</finder>
+
+		<finder name="StudentCode" return-type="Collection">
+			<finder-column name="studentCode"/>
+		</finder>
+		<finder name="StudentName" return-type="Collection">
+			<finder-column name="studentCode"/>
+		</finder>
+		<finder name="StudentEmail" return-type="Collection">
+			<finder-column name="studentEmail"/>
+		</finder>
+		<finder name="StudentPhone" return-type="Collection">
+			<finder-column name="studentPhone"/>
+		</finder>
+		<finder name="StudentGender" return-type="Collection">
+			<finder-column name="studentGender"/>
+		</finder>
+		<finder name="StudentAddress" return-type="Collection">
+			<finder-column name="studentAddress"/>
+		</finder>
+
+		<!-- References -->
+		<reference entity="Group" package-path="com.liferay.portal"/>
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"/>
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset"/>
+	</entity>
+</service-builder>

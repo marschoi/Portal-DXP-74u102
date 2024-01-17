@@ -1,0 +1,21 @@
+create table CMARS_Student (
+	uuid_ VARCHAR(75) null,
+	studentId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	studentCode VARCHAR(75) null,
+	studentName VARCHAR(75) null,
+	studentEmail VARCHAR(75) null,
+	studentPhone VARCHAR(75) null,
+	studentGender VARCHAR(75) null,
+	studentAddress VARCHAR(75) null,
+	field1 VARCHAR(75) null,
+	field2 BOOLEAN,
+	field3 INTEGER,
+	field4 DATE null,
+	field5 VARCHAR(75) null
+);

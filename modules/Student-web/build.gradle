@@ -1,0 +1,48 @@
+dependencies {
+    // Project dependencies
+    implementation project(path: ":modules:Student:Student-api")
+
+    // Liferay dependencies
+    compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+    // compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+    // Clay taglib
+    compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.clay", version: "4.0.0"
+
+    // Additional Liferay dependencies
+    compileOnly group: "com.liferay", name: "com.liferay.petra.function"
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
+    compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib"
+
+    // Java EE dependencies
+    compileOnly group: "jstl", name: "jstl"
+    compileOnly group: "javax.portlet", name: "portlet-api"
+    compileOnly group: "javax.servlet", name: "javax.servlet-api"
+    compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
+
+    // Other dependencies
+    implementation group: "commons-logging", name: "commons-logging", version: "1.2"
+
+
+    // CSS Builder
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+/*
+compileOnly는 컴파일 시간에만 필요한 의존성을 선언하고
+implementation은 컴파일 시간과 런타임 모두에서 필요한 의존성을 선언하는 것입니다.
+이러한 차이점 때문에 implementation은 일반적으로 compileOnly보다 더 일반적으로 사용됩니다.
+
+호환성 문제: Liferay DXP와 Portal 버전 간의 의존성이 호환되지 않을 수 있습니다. DXP 전용 API가 포함되어 있기 때문에,
+ DXP와 Portal 간에 API 호환성 문제가 발생할 수 있습니다.
+ 이런 경우, 특정 모듈이나 기능이 한 환경에서는 작동하지만 다른 환경에서는 작동하지 않을 수 있습니다.
+
+환경 구분: 개발 중에 어떤 Liferay 버전을 대상으로 하고 있는지 분명히 해야 합니다.
+만약 두 환경 모두에서 작동해야 한다면, 공통 API를 사용하거나 조건부 코드를 작성하여 두 환경 간 차이를 처리해야 할 수도 있습니다.
+
+모듈 설계: Liferay Portal과 DXP를 모두 지원하는 모듈을 개발한다면, 공통 API를 사용하는 것이 좋습니다.
+이렇게 하면 한 환경에서 개발된 모듈이 다른 환경에서도 원활하게 작동할 가능성이 높아집니다.
+*/

@@ -1,0 +1,10 @@
+Bundle-Name: Student-api
+Bundle-SymbolicName: com.liferay.cmars.student.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.cmars.student.exception,\
+	com.liferay.cmars.student.model,\
+	com.liferay.cmars.student.service,\
+	com.liferay.cmars.student.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Student-service/service.xml
