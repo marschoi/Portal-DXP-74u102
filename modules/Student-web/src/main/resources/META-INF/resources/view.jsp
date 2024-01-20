@@ -1,17 +1,16 @@
-<%@ include file="/init.jsp" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: cmars
+  Date: 2024-01-17
+  Time: 오후 11:41
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
 
-<div style="background-color: aqua">
-    <div>students :::: ${students}</div>
-    <div>studentCount :::: ${studentCount}</div>
-    <div>PortletURL :::: ${PortletURL}</div>
-    <div>currentURL :::: ${currentURL}</div>
-    <div>studentsManagementToolbarDisplayContext :::: ${studentsManagementToolbarDisplayContext}</div>
-    <div>studentsManagementToolbarDisplayContext.getDisplayStyle :::: ${studentsManagementToolbarDisplayContext.displayStyle}</div>
-</div>
-
-<p>
-    <b><liferay-ui:message key="studentweb.caption"/></b>
-</p>
-<h1 style="background: cornflowerblue; font-size: 20px; color: wheat; padding: 20px;">
-    <liferay-ui:message key="studentweb.greeting"/>
-</h1>
+</body>
+</html>

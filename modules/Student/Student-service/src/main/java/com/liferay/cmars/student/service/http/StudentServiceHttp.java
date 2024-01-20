@@ -170,13 +170,53 @@ public class StudentServiceHttp {
 		}
 	}
 
+	public static com.liferay.cmars.student.model.Student getStudent(
+			HttpPrincipal httpPrincipal, long studentId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		try {
+			MethodKey methodKey = new MethodKey(
+				StudentServiceUtil.class, "getStudent",
+				_getStudentParameterTypes3);
+
+			MethodHandler methodHandler = new MethodHandler(
+				methodKey, studentId);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception exception) {
+				if (exception instanceof
+						com.liferay.portal.kernel.exception.PortalException) {
+
+					throw (com.liferay.portal.kernel.exception.PortalException)
+						exception;
+				}
+
+				throw new com.liferay.portal.kernel.exception.SystemException(
+					exception);
+			}
+
+			return (com.liferay.cmars.student.model.Student)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException
+					systemException) {
+
+			_log.error(systemException, systemException);
+
+			throw systemException;
+		}
+	}
+
 	public static java.util.List<com.liferay.cmars.student.model.Student>
 		searchStudentByGroupId(HttpPrincipal httpPrincipal, long groupId) {
 
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentByGroupId",
-				_searchStudentByGroupIdParameterTypes4);
+				_searchStudentByGroupIdParameterTypes5);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, groupId);
 
@@ -209,7 +249,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentByGroupId",
-				_searchStudentByGroupIdParameterTypes5);
+				_searchStudentByGroupIdParameterTypes6);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, groupId, start, end);
@@ -245,7 +285,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentByGroupId",
-				_searchStudentByGroupIdParameterTypes6);
+				_searchStudentByGroupIdParameterTypes7);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, groupId, start, end, comparator);
@@ -279,7 +319,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentCode",
-				_searchStudentCodeParameterTypes7);
+				_searchStudentCodeParameterTypes8);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentCode);
@@ -323,7 +363,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentCode",
-				_searchStudentCodeParameterTypes8);
+				_searchStudentCodeParameterTypes9);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentCode, start, end);
@@ -369,7 +409,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentCode",
-				_searchStudentCodeParameterTypes9);
+				_searchStudentCodeParameterTypes10);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentCode, start, end, comparator);
@@ -411,7 +451,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentName",
-				_searchStudentNameParameterTypes10);
+				_searchStudentNameParameterTypes11);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentName);
@@ -455,7 +495,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentName",
-				_searchStudentNameParameterTypes11);
+				_searchStudentNameParameterTypes12);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentName, start, end);
@@ -501,7 +541,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentName",
-				_searchStudentNameParameterTypes12);
+				_searchStudentNameParameterTypes13);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentName, start, end, comparator);
@@ -543,7 +583,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentEmail",
-				_searchStudentEmailParameterTypes13);
+				_searchStudentEmailParameterTypes14);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentEmail);
@@ -587,7 +627,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentEmail",
-				_searchStudentEmailParameterTypes14);
+				_searchStudentEmailParameterTypes15);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentEmail, start, end);
@@ -633,7 +673,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentEmail",
-				_searchStudentEmailParameterTypes15);
+				_searchStudentEmailParameterTypes16);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentEmail, start, end, comparator);
@@ -675,7 +715,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentPhone",
-				_searchStudentPhoneParameterTypes16);
+				_searchStudentPhoneParameterTypes17);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentPhone);
@@ -719,7 +759,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentPhone",
-				_searchStudentPhoneParameterTypes17);
+				_searchStudentPhoneParameterTypes18);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentPhone, start, end);
@@ -765,7 +805,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentPhone",
-				_searchStudentPhoneParameterTypes18);
+				_searchStudentPhoneParameterTypes19);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentPhone, start, end, comparator);
@@ -808,7 +848,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentGender",
-				_searchStudentGenderParameterTypes19);
+				_searchStudentGenderParameterTypes20);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentGender);
@@ -852,7 +892,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentGender",
-				_searchStudentGenderParameterTypes20);
+				_searchStudentGenderParameterTypes21);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentGender, start, end);
@@ -898,7 +938,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentGender",
-				_searchStudentGenderParameterTypes21);
+				_searchStudentGenderParameterTypes22);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentGender, start, end, comparator);
@@ -941,7 +981,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentAddress",
-				_searchStudentAddressParameterTypes22);
+				_searchStudentAddressParameterTypes23);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentAddress);
@@ -985,7 +1025,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentAddress",
-				_searchStudentAddressParameterTypes23);
+				_searchStudentAddressParameterTypes24);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentAddress, start, end);
@@ -1031,7 +1071,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentAddress",
-				_searchStudentAddressParameterTypes24);
+				_searchStudentAddressParameterTypes25);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, studentAddress, start, end, comparator);
@@ -1076,7 +1116,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentByKeyWords",
-				_searchStudentByKeyWordsParameterTypes25);
+				_searchStudentByKeyWordsParameterTypes26);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, groupId, keywords, start, end, comparator);
@@ -1109,7 +1149,7 @@ public class StudentServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(
 				StudentServiceUtil.class, "searchStudentsCountByKeywords",
-				_searchStudentsCountByKeywordsParameterTypes26);
+				_searchStudentsCountByKeywordsParameterTypes27);
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, groupId, keywords);
@@ -1152,76 +1192,79 @@ public class StudentServiceHttp {
 		new Class[] {
 			long.class, com.liferay.portal.kernel.service.ServiceContext.class
 		};
-	private static final Class<?>[] _searchStudentByGroupIdParameterTypes4 =
-		new Class[] {long.class};
+	private static final Class<?>[] _getStudentParameterTypes3 = new Class[] {
+		long.class
+	};
 	private static final Class<?>[] _searchStudentByGroupIdParameterTypes5 =
-		new Class[] {long.class, int.class, int.class};
+		new Class[] {long.class};
 	private static final Class<?>[] _searchStudentByGroupIdParameterTypes6 =
+		new Class[] {long.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentByGroupIdParameterTypes7 =
 		new Class[] {
 			long.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentCodeParameterTypes7 =
-		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentCodeParameterTypes8 =
-		new Class[] {String.class, int.class, int.class};
+		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentCodeParameterTypes9 =
+		new Class[] {String.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentCodeParameterTypes10 =
 		new Class[] {
 			String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentNameParameterTypes10 =
-		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentNameParameterTypes11 =
-		new Class[] {String.class, int.class, int.class};
+		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentNameParameterTypes12 =
+		new Class[] {String.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentNameParameterTypes13 =
 		new Class[] {
 			String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentEmailParameterTypes13 =
-		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentEmailParameterTypes14 =
-		new Class[] {String.class, int.class, int.class};
+		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentEmailParameterTypes15 =
+		new Class[] {String.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentEmailParameterTypes16 =
 		new Class[] {
 			String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentPhoneParameterTypes16 =
-		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentPhoneParameterTypes17 =
-		new Class[] {String.class, int.class, int.class};
+		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentPhoneParameterTypes18 =
+		new Class[] {String.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentPhoneParameterTypes19 =
 		new Class[] {
 			String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentGenderParameterTypes19 =
-		new Class[] {String.class};
 	private static final Class<?>[] _searchStudentGenderParameterTypes20 =
-		new Class[] {String.class, int.class, int.class};
-	private static final Class<?>[] _searchStudentGenderParameterTypes21 =
-		new Class[] {
-			String.class, int.class, int.class,
-			com.liferay.portal.kernel.util.OrderByComparator.class
-		};
-	private static final Class<?>[] _searchStudentAddressParameterTypes22 =
 		new Class[] {String.class};
-	private static final Class<?>[] _searchStudentAddressParameterTypes23 =
+	private static final Class<?>[] _searchStudentGenderParameterTypes21 =
 		new Class[] {String.class, int.class, int.class};
-	private static final Class<?>[] _searchStudentAddressParameterTypes24 =
+	private static final Class<?>[] _searchStudentGenderParameterTypes22 =
 		new Class[] {
 			String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
-	private static final Class<?>[] _searchStudentByKeyWordsParameterTypes25 =
+	private static final Class<?>[] _searchStudentAddressParameterTypes23 =
+		new Class[] {String.class};
+	private static final Class<?>[] _searchStudentAddressParameterTypes24 =
+		new Class[] {String.class, int.class, int.class};
+	private static final Class<?>[] _searchStudentAddressParameterTypes25 =
+		new Class[] {
+			String.class, int.class, int.class,
+			com.liferay.portal.kernel.util.OrderByComparator.class
+		};
+	private static final Class<?>[] _searchStudentByKeyWordsParameterTypes26 =
 		new Class[] {
 			long.class, String.class, int.class, int.class,
 			com.liferay.portal.kernel.util.OrderByComparator.class
 		};
 	private static final Class<?>[]
-		_searchStudentsCountByKeywordsParameterTypes26 = new Class[] {
+		_searchStudentsCountByKeywordsParameterTypes27 = new Class[] {
 			long.class, String.class
 		};
 

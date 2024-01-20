@@ -59,6 +59,10 @@ public class StudentServiceUtil {
 		return getService().getOSGiServiceIdentifier();
 	}
 
+	public static Student getStudent(long studentId) throws PortalException {
+		return getService().getStudent(studentId);
+	}
+
 	public static List<Student> searchStudentAddress(String studentAddress)
 		throws com.liferay.cmars.student.exception.NoSuchStudentException {
 

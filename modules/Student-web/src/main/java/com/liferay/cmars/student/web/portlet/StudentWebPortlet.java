@@ -18,7 +18,7 @@ import org.osgi.service.component.annotations.Component;
 		"com.liferay.portlet.instanceable=false",
 		"javax.portlet.display-name=StudentWeb",
 		"javax.portlet.init-param.template-path=/",
-		"javax.portlet.init-param.view-template=/view.jsp",
+		"javax.portlet.init-param.view-template=/list.jsp",
 		"javax.portlet.name=" + StudentWebPortletKeys.STUDENTWEB,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"

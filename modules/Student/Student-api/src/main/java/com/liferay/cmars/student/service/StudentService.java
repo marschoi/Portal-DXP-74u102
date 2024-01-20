@@ -62,6 +62,9 @@ public interface StudentService extends BaseService {
 	public String getOSGiServiceIdentifier();
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public Student getStudent(long studentId) throws PortalException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Student> searchStudentAddress(String studentAddress)
 		throws NoSuchStudentException;
 

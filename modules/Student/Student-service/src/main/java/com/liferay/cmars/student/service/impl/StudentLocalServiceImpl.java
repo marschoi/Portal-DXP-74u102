@@ -88,6 +88,10 @@ public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
 		return student;
 	}
 
+	public Student getStudent(long studentId) throws PortalException {
+		return studentLocalService.getStudent(studentId);
+	}
+
 	/*------------------------------------------------- Search -----------------------------------------------------------------------*/
 
 	public List<Student> searchStudentByGroupId(long groupId) {

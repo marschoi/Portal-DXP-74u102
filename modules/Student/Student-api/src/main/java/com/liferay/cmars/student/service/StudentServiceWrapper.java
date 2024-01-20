@@ -58,6 +58,13 @@ public class StudentServiceWrapper
 	}
 
 	@Override
+	public com.liferay.cmars.student.model.Student getStudent(long studentId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return _studentService.getStudent(studentId);
+	}
+
+	@Override
 	public java.util.List<com.liferay.cmars.student.model.Student>
 			searchStudentAddress(String studentAddress)
 		throws com.liferay.cmars.student.exception.NoSuchStudentException {

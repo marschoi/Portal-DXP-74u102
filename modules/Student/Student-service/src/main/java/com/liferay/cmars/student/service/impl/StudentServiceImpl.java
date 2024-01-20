@@ -55,6 +55,9 @@ public class StudentServiceImpl extends StudentServiceBaseImpl {
         return studentLocalService.deleteStudent(studentId);
     }
 
+    public Student getStudent(long studentId) throws PortalException {
+        return studentLocalService.getStudent(studentId);
+    }
 
     private void _permissionChecker(ServiceContext serviceContext) throws PortalException {
         User user = getUser();
