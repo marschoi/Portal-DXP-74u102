@@ -1,4 +1,4 @@
-package com.liferay.cmars.student.web.portlet.action;
+package com.liferay.cmars.student.web.portlet.command;
 
 import com.liferay.cmars.student.model.Student;
 import com.liferay.cmars.student.service.StudentService;

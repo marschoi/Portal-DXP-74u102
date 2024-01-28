@@ -6,21 +6,34 @@
   To change this template use File | Settings | File Templates.
  Student add / edit action URL and set title.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/META-INF/resources/init.jsp" %>
+<%@ include file="/init.jsp" %>
+<%--<%@ include file="/META-INF/resources/init.jsp" %>--%>
+
+<div style="background-color: aqua; border: solid 1px black; margin: 10px; padding: 10px;">
+    <div>auther :::: ${auther}</div>
+    <div>studentList :::: ${studentList}</div>
+    <div>studentCounter :::: ${studentCounter}</div>
+    <div>PortletURL :::: ${PortletURL}</div>
+    <div>currentURL :::: ${currentURL}</div>
+    <div>studentListManagementToolbarDisplayContext :::: ${studentListManagementToolbarDisplayContext}</div>
+    <div>studentListManagementToolbarDisplayContext.getDisplayStyle :::: ${studentListManagementToolbarDisplayContext.displayStyle}</div>
+</div>
+
 
 <c:choose>
     <c:when test="${not empty student}">
         <portlet:actionURL var="studentActionURL" name="<%=MVCCommandNames.EDIT_STUDENT%>">
             <portlet:param name="redirect" value="${param.redirect}"/>
         </portlet:actionURL>
-        <c:set var="editTitle" value="edit-student"/>
+        <c:set var="editTitle" value="Edit Student"/>
     </c:when>
     <c:otherwise>
         <portlet:actionURL var="studentActionURL" name="<%=MVCCommandNames.ADD_STUDENT%>">
             <portlet:param name="redirect" value="${param.redirect}"/>
         </portlet:actionURL>
-        <c:set var="editTitle" value="add-student"/>
+        <c:set var="editTitle" value="Add Student"/>
     </c:otherwise>
 </c:choose>
 
@@ -32,47 +45,92 @@
     이 객체는 데이터를 페이지에 전달하고, 사용자 인터페이스 요소와 데이터를 바인딩하는 데 사용
     --%>
     <aui:model-context bean="${student}" model="${studentClass}"/>
-
     <aui:form action="${studentActionURL}" name="student-form" id="studentForm">
-        <aui:input name="studentId" field="studentId" type="hidden"/>
+        <aui:fieldset>
+            <aui:row>
+                <aui:col width="50">
+                    <aui:input name="studentName" label="Student Name" type="text">
+                        <aui:validator name="required"/>
+                    </aui:input>
+                </aui:col>
+                <aui:col width="50">
+                    <aui:input name="studentPhone" label="Student Phone" type="text">
+                        <aui:validator name="required"/>
+                    </aui:input>
+                </aui:col>
+            </aui:row>
+            <aui:row>
+                <aui:col width="50">
+                    <aui:input name="studentEmail" label="Student Email" type="text">
+                        <aui:validator name="email"/>
+                        <aui:validator name="required"/>
+                    </aui:input>
+                </aui:col>
+                <aui:col width="50">
+                    <aui:input name="studentCode" label="Student Code" type="text">
+                    </aui:input>
+                </aui:col>
+            </aui:row>
+
+            <%--<aui:row>
+                <aui:col width="50">
+                    <aui:input name="field5" label="Field 5" type="text" />
+                </aui:col>
+                <aui:col width="30">
+                    <aui:input name="field4" label="Field 4" type="date" />
+                </aui:col>
+                <aui:col width="20">
+                    &lt;%&ndash;<aui:input name="field5" label="Field 5" type="text" />
+                    <aui:input name="field2" label="Field 2" type="checkbox" />
+                    <aui:input name="field4" label="Field 4" type="date" />&ndash;%&gt;
+
+                    <aui:input name="fieldGroup" label="Field 2 Option 1" type="radio" value="option1"/>
+                    <aui:input name="fieldGroup" label="Field 2 Option 2" type="radio" value="option2"/>
+                </aui:col>
+            </aui:row>--%>
+        </aui:fieldset>
+
+
+        <%-- <aui:input name="studentId" field="studentId" type="hidden"/>--%>
         <%--
         field="studentId"는 이 입력 필드가 백엔드 모델의 studentId 속성과 연결됨
         Alloy UI 태그 라이브러리는 Liferay 개발에 있어 중요한 부분을 차지하며, Liferay에서 제공하는 다양한 기능과 쉽게 통합될 수 있도록 설계
         --%>
-    <%--
-    <!-- student fields -->
-    <column name="studentCode" type="String"/>
-    <column name="studentName" type="String"/>
-    <column name="studentEmail" type="String"/>
-    <column name="studentPhone" type="String"/>
-    <column name="studentGender" type="String"/>
-    <column name="studentAddress" type="String"/>
-    --%>
-        <div class="sheet">
-            <div class="panel-group panel-group-flush">
-                <aui:input name="studentCode">
+        <%--
+        <!-- student fields -->
+        <column name="studentCode" type="String"/>
+        <column name="studentName" type="String"/>
+        <column name="studentEmail" type="String"/>
+        <column name="studentPhone" type="String"/>
+        <column name="studentGender" type="String"/>
+        <column name="studentAddress" type="String"/>
+        --%>
+        <%--  <div class="sheet">
+              <div class="panel-group panel-group-flush">
+                  <aui:input name="studentCode">
 
-                </aui:input>
-                <aui:input name="studentName">
-                    <aui:validator name="required" />
-                </aui:input>
-                <aui:input name="studentEmail">
-                    <aui:validator name="required" />
-                </aui:input>
-                <aui:input name="studentPhone">
-                    <aui:validator name="required" />
-                </aui:input>
-                <aui:input name="studentGender">
-                </aui:input>
-                <aui:input name="studentAddress">
-                </aui:input>
-            </div>
-        </div>
-
+                  </aui:input>
+                  <aui:input name="studentName">
+                      <aui:validator name="required"/>
+                  </aui:input>
+                  <aui:input name="studentEmail">
+                      <aui:validator name="required"/>
+                  </aui:input>
+                  <aui:input name="studentPhone">
+                      <aui:validator name="required"/>
+                  </aui:input>
+                  <aui:input name="studentGender">
+                  </aui:input>
+                  <aui:input name="studentAddress">
+                  </aui:input>
+              </div>
+          </div>--%>
+        <aui:button-row>
+            <aui:button type="submit" value="Submin"/>
+            <aui:button type="cancel" value="Cancel"/>
+        </aui:button-row>
     </aui:form>
-
-
-</>
+</div>
 
 <!--------------------------------------------------------------------->
 <!--

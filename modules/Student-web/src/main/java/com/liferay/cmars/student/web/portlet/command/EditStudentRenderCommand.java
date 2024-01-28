@@ -1,4 +1,4 @@
-package com.liferay.cmars.student.web.portlet.action;
+package com.liferay.cmars.student.web.portlet.command;
 
 import com.liferay.cmars.student.exception.NoSuchStudentException;
 import com.liferay.cmars.student.model.Student;
@@ -28,9 +28,9 @@ import javax.portlet.RenderResponse;
         },
         service = MVCRenderCommand.class
 )
-public class EditStudentMVCRenderCommand implements MVCRenderCommand {
+public class EditStudentRenderCommand implements MVCRenderCommand {
     //logger
-    private static final Log _log = LogFactoryUtil.getLog(EditStudentMVCRenderCommand.class);
+    private static final Log _log = LogFactoryUtil.getLog(EditStudentRenderCommand.class);
 
     // 서비스 호출
     @Reference

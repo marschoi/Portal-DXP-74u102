@@ -35,7 +35,7 @@ public class StudentServiceImpl extends StudentServiceBaseImpl {
     @Override
     public Student addStudent(long userId, String studentCode, String studentName, String studentEmail, String studentPhone,
                               String studentGender, String studentAddress, ServiceContext serviceContext) throws PortalException {
-        _permissionChecker(serviceContext);
+        /*_permissionChecker(serviceContext);*/
         return studentLocalService.addStudent(userId, studentCode, studentName, studentEmail, studentPhone, studentGender, studentAddress, serviceContext);
     }
 
@@ -44,14 +44,14 @@ public class StudentServiceImpl extends StudentServiceBaseImpl {
     public Student updateStudent(long studentId, String studentCode, String studentName, String studentEmail, String studentPhone,
                                  String studentGender, String studentAddress, ServiceContext serviceContext) throws PortalException {
 
-        _permissionChecker(serviceContext);
+        /*_permissionChecker(serviceContext);*/
         return studentLocalService.updateStudent(studentId, studentCode, studentName, studentEmail, studentPhone, studentGender, studentAddress, serviceContext);
     }
 
     @Override
     public Student deleteStudent(long studentId, ServiceContext serviceContext) throws PortalException {
 
-        _permissionChecker(serviceContext);
+        /*_permissionChecker(serviceContext);*/
         return studentLocalService.deleteStudent(studentId);
     }
 
